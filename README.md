@@ -10,6 +10,9 @@ This also serve as mini n easy to learn plugin for people interested in learning
 ## Usage
 Add+enable it in ACT - plugin listing and try out :)
 
+## On Progress
+- Full screen dimming effect when gierskogul can be used
+
 ## Credits & Contacts
 Apple Pudding @ Leviathan
 

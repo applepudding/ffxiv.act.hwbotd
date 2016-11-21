@@ -4,8 +4,7 @@ Plugin to callout when it's safe to gierskogul. For those lolgoons!
 This also serve as mini n easy to learn plugin for people interested in learning how to make an ACT plugin.
 
 ## Installation
-1. Download and unblock (if neccesary) .zip file from releases section (https://github.com/applepudding/ffxiv.act.hwbotd/releases).
-2. Extract .zip
+Download and unblock (if neccesary) .dll file from releases section (https://github.com/applepudding/ffxiv.act.hwbotd/releases).
 
 ## Usage
 Add+enable it in ACT - plugin listing and try out :)

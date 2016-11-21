@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ffxiv.act.hwbotd")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("botd tracker and gierskogul calls")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Apple Pudding @ Leviathan")]
 [assembly: AssemblyProduct("ffxiv.act.hwbotd")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © Apple Pudding 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

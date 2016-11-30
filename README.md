@@ -13,6 +13,6 @@ Add+enable it in ACT - plugin listing and try out :)
 - Full screen dimming effect when gierskogul can be used
 
 ## Credits & Contacts
-Apple Pudding @ Leviathan
+Apple Pudding, Raccle Lancale @ Leviathan
 
 (template: https://gist.github.com/zenorocha/4526327)

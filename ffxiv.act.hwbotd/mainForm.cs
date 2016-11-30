@@ -22,7 +22,8 @@ namespace ffxiv.act.hwbotd
         TimeSpan botdDuration;
         double botdNext;
         double lag_compensation = 2;
-
+        UX uxForm = new UX();
+        double UXduration = 0;
         #endregion
 
         #region IActPluginV1 Members
@@ -74,6 +75,7 @@ namespace ffxiv.act.hwbotd
                     case "geirskogul":
                         TimeSpan ts = new TimeSpan(0, 0, 10);
                         botdDuration = botdDuration.Subtract(ts);
+                        UXduration = 0;
                         break;
                 }
             }
@@ -85,7 +87,14 @@ namespace ffxiv.act.hwbotd
             botdDuration = botdDuration.Add(ts);
             if ((botdDuration.TotalSeconds > Int32.Parse(this.txt_safeToGS.Text)) || (botdNext < Int32.Parse(this.txt_safeToDrop.Text)))
             {
-                ActGlobals.oFormActMain.PlayTtsMethod(this.txt_toSpeak.Text);
+                if (this.txt_toSpeak.Text != "")
+                {
+                    ActGlobals.oFormActMain.PlayTtsMethod(this.txt_toSpeak.Text);
+                }                
+                if (chk_overlay.Checked)
+                {
+                    UXduration = 8.0;
+                }                
             }
             else
             {
@@ -101,6 +110,7 @@ namespace ffxiv.act.hwbotd
             xmlSettings.AddControlSetting(txt_toSpeak.Name, txt_toSpeak);
             xmlSettings.AddControlSetting(txt_safeToDrop.Name, txt_safeToDrop);
             xmlSettings.AddControlSetting(txt_timeAccuracy.Name, txt_timeAccuracy);
+            xmlSettings.AddControlSetting(chk_overlay.Name, chk_overlay);
 
             if (File.Exists(settingsFile))
             {
@@ -185,6 +195,16 @@ namespace ffxiv.act.hwbotd
                     TimeSpan ts = new TimeSpan(0, 0, 0, 0, Int32.Parse(txt_timeAccuracy.Text));
                     botdDuration = botdDuration.Subtract(ts);
                     lbl_activeBuff.Text = botdDuration.TotalSeconds.ToString();
+                    if (UXduration > 0)
+                    {
+                        uxForm.Show();
+                        UXduration -= Int32.Parse(txt_timeAccuracy.Text) * 0.001;
+                    }
+                    else
+                    {
+                        uxForm.Hide();
+                    }
+                    
                 }
             }
             else
@@ -195,6 +215,7 @@ namespace ffxiv.act.hwbotd
         
         void disposeBotdPlugin()
         {
+            uxForm.Close();
             if (fightTimer != null)
             {
                 fightTimer.Stop();
@@ -206,6 +227,19 @@ namespace ffxiv.act.hwbotd
         private void txt_timeAccuracy_TextChanged(object sender, EventArgs e)
         {
             fightTimer = new System.Timers.Timer(Int32.Parse(txt_timeAccuracy.Text)); // Create a timer with a 1 second interval.
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (uxForm.Visible == false)
+            {
+                uxForm.Show();
+            }
+            else
+            {
+                uxForm.Hide();
+            }
+            
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chk_overlay = new System.Windows.Forms.CheckBox();
             this.txt_safeToDrop = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_safeToGS = new System.Windows.Forms.TextBox();
@@ -41,7 +42,7 @@
             this.lbl_activeBuff = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_GSCooldown = new System.Windows.Forms.Label();
-            this.chk_overlay = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +67,18 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gierskogul";
+            // 
+            // chk_overlay
+            // 
+            this.chk_overlay.AutoSize = true;
+            this.chk_overlay.Checked = true;
+            this.chk_overlay.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_overlay.Location = new System.Drawing.Point(10, 191);
+            this.chk_overlay.Name = "chk_overlay";
+            this.chk_overlay.Size = new System.Drawing.Size(92, 17);
+            this.chk_overlay.TabIndex = 17;
+            this.chk_overlay.Text = "Show Overlay";
+            this.chk_overlay.UseVisualStyleBackColor = true;
             // 
             // txt_safeToDrop
             // 
@@ -173,23 +186,24 @@
             this.lbl_GSCooldown.TabIndex = 10;
             this.lbl_GSCooldown.Text = "0";
             // 
-            // chk_overlay
+            // button1
             // 
-            this.chk_overlay.AutoSize = true;
-            this.chk_overlay.Location = new System.Drawing.Point(10, 191);
-            this.chk_overlay.Name = "chk_overlay";
-            this.chk_overlay.Size = new System.Drawing.Size(203, 17);
-            this.chk_overlay.TabIndex = 17;
-            this.chk_overlay.Text = "Full Screen Dim Overlay (on progress)";
-            this.chk_overlay.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(14, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Test Show Overlay";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "mainForm";
-            this.Size = new System.Drawing.Size(428, 303);
+            this.Size = new System.Drawing.Size(284, 303);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -212,5 +226,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_GSCooldown;
         private System.Windows.Forms.CheckBox chk_overlay;
+        private System.Windows.Forms.Button button1;
     }
 }
